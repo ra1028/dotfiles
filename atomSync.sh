@@ -1,6 +1,10 @@
 ATOMDIR=$HOME/dotfiles/atom
 TARGET=$HOME
 
-ln -sf $ATOMDIR/.atom/ $TARGET/
+atomfile=.atom
+ln -sf $ATOMDIR/$atomfile/ $TARGET/
+echo "Created $atomfile/"
+
 apm star --installed
 apm stars --install
+echo "Installed starred package"
