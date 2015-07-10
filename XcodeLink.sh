@@ -1,5 +1,5 @@
 DIR=$HOME/dotfiles
-BASE=#HOME/dotfiles/Xcode
+BASE=$HOME/dotfiles/Xcode
 TARGET=$HOME/Library/Developer/Xcode
 
 cd $BASE/FontAndColorThemes/

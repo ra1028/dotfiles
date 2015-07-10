@@ -1,6 +1,6 @@
 DIR=$HOME/dotfiles
 FONTSDIR=$HOME/dotfiles/env/Fonts
-TARGET=$HOME/Library/Developer/Fonts
+TARGET=$HOME/Library/Fonts
 
 cd $FONTSDIR;
 for font in * ; do
@@ -9,10 +9,10 @@ for font in * ; do
   [ $font = ".DS_Store" ] && continue
 
   if [[ -f $font ]] ; then
-    ln -sf $PWD/$font $TARGET/
-    suffix="@"
+    cp -f $PWD/$font $TARGET/
+    suffix=""
   elif [[ -d $font ]] ; then
-    ln -sf $PWD/$font/ $TARGET/
+    cp -af $PWD/$font $TARGET/
     suffix="/"
   fi
   echo "Created $font$suffix"
