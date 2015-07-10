@@ -1,0 +1,1 @@
+/Users/Ryo/Desktop/dotfiles/dotfiles/.zshrc
