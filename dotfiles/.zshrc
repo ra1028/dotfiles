@@ -201,3 +201,6 @@ alias -s .java='javarun'
 
 # for hub command
 alias -g pr='pull-request'
+
+# local shell command
+[ -f ~/.zshrc.local ] && source ~/.zshrc.local

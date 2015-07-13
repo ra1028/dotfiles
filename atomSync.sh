@@ -2,10 +2,7 @@ DIR=$HOME/dotfiles
 ATOMDIR=$HOME/dotfiles/atom/.atom
 TARGET=$HOME/.atom
 
-if [[ ! -e $TARGET ]] ; then
-    mkdir $TARGET
-    echo "Created $TARGET/"
-fi
+[ ! -e $TARGET ] && mkdir $TARGET
 
 cd $ATOMDIR
 for file in * ; do
@@ -15,7 +12,7 @@ for file in * ; do
 
   if [[ -f $file ]] ; then
     ln -sf $ATOMDIR/$file $TARGET/
-    echo "Created /.atom/$file@"
+    echo "Created ~/.atom/$file@"
   fi
 done
 cd $DIR

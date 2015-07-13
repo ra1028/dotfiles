@@ -8,6 +8,8 @@ for scheme in * ; do
   [ $scheme = ".." ] && continue
   [ $scheme = ".DS_Store" ] && continue
 
+  [ ! -e $TARGET/UserData/FontAndColorThemes/ ] && mkdir $TARGET/UserData/FontAndColorThemes
+
   if [[ -f $scheme ]]; then
     ln -sf $PWD/$scheme $TARGET/UserData/FontAndColorThemes/
     suffix="@"
