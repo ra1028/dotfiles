@@ -24,11 +24,13 @@ atom() {
 
 install() {
   brew
-  symlink
-  env
-  karabiner
-  xcode
-  atom
+  if [ $? -eq 0 ] ; then
+    symlink
+    env
+    karabiner
+    xcode
+    atom
+  fi
 }
 
 case $1 in
