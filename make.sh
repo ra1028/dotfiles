@@ -7,7 +7,7 @@ symlink() {
 }
 
 env() {
-  sh envLink.sh
+  sh envSetup.sh
 }
 
 karabiner() {
@@ -15,23 +15,27 @@ karabiner() {
 }
 
 xcode() {
-  sh XcodeLink.sh
+  sh XcodeSetup.sh
 }
 
 atom() {
-  sh atomSync.sh
+  sh atomSetup.sh
 }
 
 install() {
   brew
-  symlink
-  env
-  karabiner
-  xcode
-  atom
+  if [ $? -eq 0 ] ; then
+    symlink
+    env
+    karabiner
+    xcode
+    atom
+  fi
 }
 
 case $1 in
+  `` )
+  install ;;
   'install' )
   install ;;
   'brew' )
@@ -46,4 +50,6 @@ case $1 in
   xcode ;;
   'atom' )
   atom ;;
+  * )
+  echo "Illegal argument error"
 esac
