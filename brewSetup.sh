@@ -6,7 +6,7 @@ function brewInstall () {
   echo "Done"
 }
 
-brewdir=`which brew 2>&1`
+brewdir=`which brew 2>/dev/null`
 if [[ $brewdir == "" ]] ; then
   echo "Installing Homebrew..."
   script="curl -fsL https://raw.githubusercontent.com/Homebrew/install/master/install" 2>/dev/null)
