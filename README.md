@@ -8,7 +8,7 @@
 - __Install Xcode and Command line tools ahead.__
 
 - Commands  
-  ```sh make.sh install```  
+  ```sh make.sh``` Or ```sh make.sh install```  
   ```sh make.sh homebrew```  
   ```sh make.sh symlink```  
   ```sh make.sh env```  
