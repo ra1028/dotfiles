@@ -12,3 +12,12 @@
 #   editor = editorView.getEditor()
 #   if path.extname(editor.getPath()) is '.md'
 #     editor.setSoftWrapped(true)
+
+# go paths
+goroot = atom.config.get('core.Path.GOROOT')
+if goroot
+  process.env.PATH = ["#{goroot}", process.env.PATH].join(":")
+
+gopath = atom.config.get('core.Path.GOPATH')
+if gopath
+  process.env.PATH = ["#{gopath}", process.env.PATH].join(":")

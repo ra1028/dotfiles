@@ -18,8 +18,12 @@
 
 
 - Manually  
+  Alfred 2.app is still not available on brew cask.
+  So, download from following link.
+  `https://www.alfredapp.com/`
+
   `/dotfiles/env/Ryoson.terminal`  
   Terminal setting -> prifile -> read  
-  
+
   `/dotfiles/env/BTTSettings`  
   BTT -> presets -> import

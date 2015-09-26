@@ -51,5 +51,5 @@ case $1 in
   'atom' )
   atom ;;
   * )
-  echo "Illegal argument error"
+  echo "Invalid argument"
 esac

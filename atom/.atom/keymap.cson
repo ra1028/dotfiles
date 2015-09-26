@@ -13,6 +13,9 @@
   'enter': 'editor:newline'
   'ctrl-i': 'editor:auto-indent'
   'ctrl-y': 'core:paste'
+
+'atom-text-editor':
+  'ctrl-shift-i': 'godef:toggle'
 #
 # '.workspace':
 #   'ctrl-shift-p': 'core:move-up'

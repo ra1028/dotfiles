@@ -6,10 +6,8 @@
 # source common shell run command
 source ~/.shrc.common
 
-# go setting
-export GOPATH="$HOME/repos/gohome"
-export GOROOT="/usr/local/Cellar/go/1.4.1/libexec"
-export PATH="$GOPATH/bin:$GOROOT/bin:$PATH"
+# gvm setting
+[[ -s "/Users/Ryo/.gvm/scripts/gvm" ]] && source "/Users/Ryo/.gvm/scripts/gvm"
 
 # use key map like emacs
 bindkey -e
@@ -175,7 +173,7 @@ function xcopen () {
 function javarun () {
     if [[ $1 = '' ]] ; then
       echo "Enter java class name." ;
-      return 0
+      return 1
     fi
 
     local filename=$((\basename $1 .java) 2>/dev/null)
@@ -196,6 +194,7 @@ alias ref='source ~/.zshrc'
 alias .hide='defaults write com.apple.finder AppleShowAllFiles false'
 alias .show='defaults write com.apple.finder AppleShowAllFiles true'
 alias xco='xcopen -a /Applications/Xcode.app'
+alias xcbo='xcopen -a /Applications/Xcode-beta.app'
 alias atom='open -a /Applications/Atom.app'
 alias -s .java='javarun'
 
