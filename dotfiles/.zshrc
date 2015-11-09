@@ -196,7 +196,6 @@ alias .show='defaults write com.apple.finder AppleShowAllFiles true'
 alias xco='xcopen -a /Applications/Xcode.app'
 alias xcbo='xcopen -a /Applications/Xcode-beta.app'
 alias atom='open -a /Applications/Atom.app'
-alias -s .java='javarun'
 
 # for hub command
 alias -g pr='pull-request'
