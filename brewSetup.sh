@@ -18,7 +18,7 @@ function brewSetup () {
     echo "Installing Homebrew..."
     script=`curl -fsL https://raw.githubusercontent.com/Homebrew/install/master/install 2>/dev/null`
     if [[ $script != "" ]] ; then
-      ruby -e "$($script)"
+      ruby -e "$script"
       echo "Homebrew install succeeded"
       brewInstall
     else

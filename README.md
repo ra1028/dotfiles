@@ -9,7 +9,7 @@
 
 - Commands  
   `sh make.sh` or `sh make.sh install`  
-  `sh make.sh homebrew`  
+  `sh make.sh brew`  
   `sh make.sh symlink`  
   `sh make.sh env`  
   `sh make.sh karabiner`  
