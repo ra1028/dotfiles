@@ -24,18 +24,19 @@
       "godef"
     ]
     Path:
-      GOROOT: "/Users/Ryo/.gvm/gos/go1.5/bin"
-      GOPATH: "/Users/Ryo/.gvm/pkgsets/go1.5/global/bin"
+      GOROOT: "/Users/Ryo/.gvm/gos/go1.5.1/bin"
+      GOPATH: "/Users/Ryo/.gvm/pkgsets/go1.5.1/global/bin"
   editor:
     invisibles: {}
     showInvisibles: true
     showIndentGuide: true
     softWrap: true
-    softWrapAtPreferredLineLength: true
     autoIndentOnPaste: false
-    fontSize: 15
     lineHeight: 1.4
     fontFamily: "mensch"
+    fontSize: 15
+    preferredLineLength: 150
+    softWrapAtPreferredLineLength: true
   "autocomplete-plus":
     confirmCompletion: "enter"
     strictMatching: true
@@ -43,16 +44,15 @@
     defaultProvider: "Symbol"
     navigateCompletions: "ctrl-p,ctrl-n"
   "highlight-selected": {}
-  minimap: {}
+  minimap:
+    displayPluginsControls: false
+    minimapScrollIndicator: false
   "auto-update-packages": {}
-  "japanese-wrap":
-    characterWidth: {}
-    lineBreakingRule: {}
   "go-plus":
-    goPath: "/Users/Ryo/.gvm/pkgsets/go1.5/global/bin"
-    goInstallation: "/Users/Ryo/.gvm/gos/go1.5/bin"
+    goPath: "/Users/Ryo/.gvm/pkgsets/go1.5.1/global/bin"
+    goInstallation: "/Users/Ryo/.gvm/gos/go1.5.1/bin"
     formatOnSave: false
     formatTool: "gofmt"
   godef: {}
   "linter-golinter":
-    executablePath: "/Users/Ryo/.gvm/pkgsets/go1.5/global/bin/golint"
+    executablePath: "/Users/Ryo/.gvm/pkgsets/go1.5.1/global/bin/golint"
