@@ -34,9 +34,9 @@
     autoIndentOnPaste: false
     lineHeight: 1.4
     fontFamily: "mensch"
-    fontSize: 15
     preferredLineLength: 150
     softWrapAtPreferredLineLength: true
+    fontSize: 13
   "autocomplete-plus":
     confirmCompletion: "enter"
     strictMatching: true
