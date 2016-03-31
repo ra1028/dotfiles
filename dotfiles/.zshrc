@@ -9,6 +9,10 @@ source ~/.shrc.common
 # gvm setting
 [[ -s "/Users/Ryo/.gvm/scripts/gvm" ]] && source "/Users/Ryo/.gvm/scripts/gvm"
 
+# rbenv setting
+# export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)" 2>/dev/null
+
 # use key map like emacs
 bindkey -e
 
@@ -191,13 +195,11 @@ function javarun () {
 # alias
 alias ls='ls -a -G'
 alias ref='source ~/.zshrc'
-alias .hide='defaults write com.apple.finder AppleShowAllFiles false'
-alias .show='defaults write com.apple.finder AppleShowAllFiles true'
 alias xco='xcopen -a /Applications/Xcode.app'
 alias xcbo='xcopen -a /Applications/Xcode-beta.app'
 alias atom='open -a /Applications/Atom.app'
 
-# for hub command
+# for hub
 alias -g pr='pull-request'
 
 # local shell command

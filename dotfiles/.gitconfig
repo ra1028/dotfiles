@@ -4,7 +4,7 @@
 [merge]
 	tool = vimdiff
 [core]
-	excludesfile = /Users/Ryo/.gitignore_global
+	excludesfile = /Users/Ryo/dotfiles/dotfiles/.gitignore_global
     editor = vim
 [difftool "atom"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"

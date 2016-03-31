@@ -13,15 +13,22 @@
 #   if path.extname(editor.getPath()) is '.md'
 #     editor.setSoftWrapped(true)
 
-# golang settings
+# go settings
 
-goroot = atom.config.get('core.Path.GOROOT')
+goroot = atom.config.get("core.Path.GOROOT")
 if goroot
   process.env.PATH = ["#{goroot}", process.env.PATH].join(":")
-  atom.packages.config.set('go-plus.goInstallation', goroot)
+  atom.packages.config.set("go-plus.goInstallation", goroot)
 
 gopath = atom.config.get('core.Path.GOPATH')
 if gopath
   process.env.PATH = ["#{gopath}", process.env.PATH].join(":")
-  atom.packages.config.set('go-plus.goPath', gopath)
-  atom.packages.config.set('linter-golinter.executablePath', "#{gopath}/golint")
+  atom.packages.config.set("go-plus.goPath", gopath)
+  atom.packages.config.set("linter-golinter.executablePath", "#{gopath}/golint")
+
+# ruby settings
+
+rubypath = atom.config.get("core.Path.RUBYPATH")
+if rubypath
+  process.env.PATH = ["#{rubypath}", process.env.PATH].join(":")
+  atom.packages.config.set("linter-ruby.rubyExecutablePath", "#{rubypath}/ruby")
