@@ -7,11 +7,32 @@
 source ~/.shrc.common
 
 # gvm setting
-[[ -s "/Users/Ryo/.gvm/scripts/gvm" ]] && source "/Users/Ryo/.gvm/scripts/gvm"
+[[ -e "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # rbenv setting
-# export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)" 2>/dev/null
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)" 2>/dev/null
+fi
+
+# jenv setting
+if which jenv > /dev/null; then
+  eval "$(jenv init -)" 2>/dev/null
+fi
+
+# scalaenv setting
+if which scalaenv > /dev/null; then
+  eval "$(scalaenv init -)" 2>/dev/null
+fi
+
+# swiftenv setting
+if which swiftenv > /dev/null; then
+eval "$(swiftenv init - zsh)" 2>/dev/null
+fi
+
+# direnv setting
+if which direnv > /dev/null; then
+  eval "$(direnv hook zsh)" 2>/dev/null
+fi
 
 # use key map like emacs
 bindkey -e
@@ -174,21 +195,14 @@ function xcopen () {
     fi
 }
 
-function javarun () {
-    if [[ $1 = '' ]] ; then
-      echo "Enter java class name." ;
-      return 1
-    fi
-
-    local filename=$((\basename $1 .java) 2>/dev/null)
-    local java=$((\ls -d $filename.java) 2>/dev/null)
-    if [[ $java != '' ]] ; then
-      if javac $filename.java ; then
-        echo "Running $filename.\n" ;
-        java $filename ;
-      fi
+function ijopen () {
+    local iml=$((\ls -d *.iml) 2>/dev/null)
+    if [[ $iml != '' ]] ; then
+        local pwd=$(pwd)
+        echo "Trying to open $pwd\n" ;
+        open $@ $pwd;
     else
-      echo "$filename.java is not exist.\n" ;
+        echo "IntelliJ project is not exist.\n"
     fi
 }
 
@@ -197,7 +211,7 @@ alias ls='ls -a -G'
 alias ref='source ~/.zshrc'
 alias xco='xcopen -a /Applications/Xcode.app'
 alias xcbo='xcopen -a /Applications/Xcode-beta.app'
-alias atom='open -a /Applications/Atom.app'
+alias ijo='ijopen -a /Applications/IntelliJ\ IDEA\ CE.app'
 
 # for hub
 alias -g pr='pull-request'
