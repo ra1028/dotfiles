@@ -7,7 +7,7 @@
 source ~/.shrc.common
 
 # gvm setting
-[[ -s "/Users/Ryo/.gvm/scripts/gvm" ]] && source "/Users/Ryo/.gvm/scripts/gvm"
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # rbenv setting
 # export PATH="$HOME/.rbenv/bin:$PATH"
@@ -174,6 +174,17 @@ function xcopen () {
     fi
 }
 
+function ijopen () {
+    local iml=$((\ls -d *.iml) 2>/dev/null)
+    if [[ $iml != '' ]] ; then
+        local pwd=$(pwd)
+        echo "Trying to open $pwd\n" ;
+        open $@ $pwd;
+    else
+        echo "IntelliJ project is not exist.\n"
+    fi
+}
+
 function javarun () {
     if [[ $1 = '' ]] ; then
       echo "Enter java class name." ;
@@ -197,7 +208,7 @@ alias ls='ls -a -G'
 alias ref='source ~/.zshrc'
 alias xco='xcopen -a /Applications/Xcode.app'
 alias xcbo='xcopen -a /Applications/Xcode-beta.app'
-alias atom='open -a /Applications/Atom.app'
+alias ijo='ijopen -a /Applications/IntelliJ\ IDEA\ CE.app'
 
 # for hub
 alias -g pr='pull-request'

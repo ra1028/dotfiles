@@ -19,6 +19,7 @@
       "deprecation-cop"
       "wrap-guide"
       "autocomplete-paths"
+      "linter-ruby"
     ]
     packagesWithKeymapsDisabled: [
       "go-plus"
