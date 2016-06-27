@@ -10,8 +10,29 @@ source ~/.shrc.common
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 # rbenv setting
-# export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)" 2>/dev/null
+if which rbenv > /dev/null; then
+  eval "$(rbenv init -)" 2>/dev/null
+fi
+
+# jenv setting
+if which jenv > /dev/null; then
+  eval "$(jenv init -)" 2>/dev/null
+fi
+
+# scalaenv setting
+if which scalaenv > /dev/null; then
+  eval "$(scalaenv init -)" 2>/dev/null
+fi
+
+# swiftenv setting
+if which swiftenv > /dev/null; then
+eval "$(swiftenv init - zsh)" 2>/dev/null
+fi
+
+# direnv setting
+if which direnv > /dev/null; then
+  eval "$(direnv hook zsh)" 2>/dev/null
+fi
 
 # use key map like emacs
 bindkey -e
@@ -182,24 +203,6 @@ function ijopen () {
         open $@ $pwd;
     else
         echo "IntelliJ project is not exist.\n"
-    fi
-}
-
-function javarun () {
-    if [[ $1 = '' ]] ; then
-      echo "Enter java class name." ;
-      return 1
-    fi
-
-    local filename=$((\basename $1 .java) 2>/dev/null)
-    local java=$((\ls -d $filename.java) 2>/dev/null)
-    if [[ $java != '' ]] ; then
-      if javac $filename.java ; then
-        echo "Running $filename.\n" ;
-        java $filename ;
-      fi
-    else
-      echo "$filename.java is not exist.\n" ;
     fi
 }
 
