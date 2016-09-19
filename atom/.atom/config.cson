@@ -26,8 +26,8 @@
       "godef"
     ]
     themes: [
-      "spacegray-eighties-ui"
-      "flatland-dark"
+      "spacegray-dark-neue-ui"
+      "spacegray-black-syntax"
     ]
   editor:
     fontFamily: "mensch"

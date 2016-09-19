@@ -3,6 +3,20 @@
 # File:        .zshrc
 # Maintainer:  Ryo Aoyama <r.fe51028.r@gmail.com>
 
+cat <<'EOD'
+[1;33m__        __   _
+\ \      / /__| | ___ ___  _ __ ___   ___
+ \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \
+  \ V  V /  __/ | (__ (_) | | | | | |  __/
+   \_/\_/ \___|_|\___\___/|_| |_| |_|\___|
+                        ____
+                       |  _ \ _   _  ___
+                       | |_) | | | |/ _ \
+                       |  _ <| |_| | (_) |
+                       |_| \_\\__, |\___/
+                              |___/
+EOD
+
 # source common shell run command
 source ~/.shrc.common
 
@@ -26,7 +40,7 @@ fi
 
 # swiftenv setting
 if which swiftenv > /dev/null; then
-eval "$(swiftenv init - zsh)" 2>/dev/null
+  eval "$(swiftenv init - zsh)" 2>/dev/null
 fi
 
 # direnv setting
@@ -89,8 +103,8 @@ setopt prompt_sp
 # PROMPT1
 PS1="%{[0m%}
 %{[37m%}\$(parse_git_status)%{[0m%}
-%{[32m%}[%n] %{[33m%}%~%{[0m%}
-%(?|%{[36m%}[Success] >>|%{[31m%}[Failure] >>)%{[35m%}\$(parse_git_branch) %{[0m%}"
+%{[1;35m%}@%n %{[1;33m%}%~%{[0m%}
+%(?|%{[1;36m%} $|%{[1;31m%} $)%{[1;35m%}\$(parse_git_branch) %{[0m%}"
 
 # PROMPT2
 PS2="%_> "
@@ -128,9 +142,6 @@ unsetopt list_beep
 
 # reduce line of list
 setopt list_packed
-
-# show trailing character of file
-getopt list_types
 
 # set candidate immediately
 # zstyle ':completion:*' menu true
