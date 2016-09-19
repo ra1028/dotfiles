@@ -30,7 +30,7 @@
       "spacegray-black-syntax"
     ]
   editor:
-    fontFamily: "mensch"
+    fontFamily: "meslo"
     invisibles: {}
     lineHeight: 1.4
     preferredLineLength: 150
