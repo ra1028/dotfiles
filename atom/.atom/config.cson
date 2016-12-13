@@ -3,8 +3,9 @@
   "autocomplete-haskell":
     useBackend: "haskell-ghc-mod"
   "autocomplete-plus":
+    backspaceTriggersAutocomplete: true
     confirmCompletion: "enter"
-    defaultProvider: "Symbol"
+    defaultProvider: "Fuzzy"
     enableBuiltinProvider: false
     minimumWordLength: 1
     navigateCompletions: "ctrl-p,ctrl-n"
@@ -29,6 +30,7 @@
     packagesWithKeymapsDisabled: [
       "go-plus"
       "godef"
+      "ide-haskell"
     ]
     telemetryConsent: "no"
     themes: [

@@ -10,7 +10,6 @@
 # Here's an example taken from Atom's built-in keymap:
 #
 '.editor':
-  'enter': 'editor:newline'
   'ctrl-i': 'editor:auto-indent'
   'ctrl-y': 'core:paste'
 
