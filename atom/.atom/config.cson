@@ -1,5 +1,7 @@
 "*":
   "auto-update-packages": {}
+  "autocomplete-haskell":
+    useBackend: "haskell-ghc-mod"
   "autocomplete-plus":
     confirmCompletion: "enter"
     defaultProvider: "Symbol"
@@ -7,12 +9,15 @@
     minimumWordLength: 1
     navigateCompletions: "ctrl-p,ctrl-n"
     strictMatching: true
+  "autocomplete-python":
+    pythonPaths: "/Users/a14179/.pyenv/shims"
+    useSnippets: "all"
   "autocomplete-ruby": {}
+  "bracket-matcher":
+    autocompleteBrackets: false
+    autocompleteSmartQuotes: false
+    wrapSelectionsInBrackets: false
   core:
-    Path:
-      GOPATH: "/Users/Ryo/.gvm/pkgsets/go1.6.2/global/bin"
-      GOROOT: "/Users/Ryo/.gvm/gos/go1.6.2/bin"
-      RUBYPATH: "/Users/Ryo/.rbenv/shims"
     audioBeep: false
     disabledPackages: [
       "metrics"
@@ -25,6 +30,7 @@
       "go-plus"
       "godef"
     ]
+    telemetryConsent: "no"
     themes: [
       "spacegray-dark-neue-ui"
       "spacegray-black-syntax"
@@ -46,7 +52,15 @@
     goInstallation: "/Users/Ryo/.gvm/gos/go1.6.2/bin"
     goPath: "/Users/Ryo/.gvm/pkgsets/go1.6.2/global/bin"
   godef: {}
+  "haskell-ghc-mod":
+    onChangeCheck: true
+    onChangeLint: true
+    onSelectionShow: "typeAndInfo"
+    suppressGhcPackagePathWarning: true
   "highlight-selected": {}
+  "ide-haskell": {}
+  "ide-haskell-repl":
+    defaultRepl: "stack"
   linter:
     lintOnChangeInterval: 2000
     showHighlighting: false
@@ -61,13 +75,40 @@
     minimapScrollIndicator: false
   welcome:
     showOnStartup: false
+".console.python.text":
+  editor:
+    preferredLineLength: 150
 ".erb.html.text":
+  editor:
+    preferredLineLength: 150
+".html.ruby.text":
   editor:
     preferredLineLength: 150
 ".ini.source":
   editor:
     preferredLineLength: 150
+".js.rails.source source.jquery.js":
+  editor:
+    preferredLineLength: 150
+".python.regexp.source":
+  editor:
+    preferredLineLength: 150
+".python.source":
+  editor:
+    preferredLineLength: 150
+".python.text.traceback":
+  editor:
+    preferredLineLength: 150
+".rails.rjs.ruby.source":
+  editor:
+    preferredLineLength: 150
+".rails.ruby.source":
+  editor:
+    preferredLineLength: 150
 ".ruby.source":
+  editor:
+    preferredLineLength: 150
+".ruby.source.sql":
   editor:
     preferredLineLength: 150
 ".source.swift":

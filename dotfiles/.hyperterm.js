@@ -2,15 +2,16 @@ module.exports = {
   config: {
     fontSize: 12,
     fontFamily: 'MesloLGSDZ-Regular',
-    cursorColor: 'rgba(248,28,229,0.75)',
+    cursorColor: 'rgba(248,28,229,0.8)',
     cursorShape: 'BLOCK',
     foregroundColor: '#fff',
     backgroundColor: '#000',
     borderColor: '#555',
     css: '',
     termCSS: '',
+    showHamburgerMenu: true,
+    showWindowControls: true,
     padding: '12px 14px',
-
     colors: {
       black: '#000000',
       red: '#ff0000',
@@ -29,8 +30,11 @@ module.exports = {
       lightCyan: '#00ffff',
       lightWhite: '#ffffff'
     },
-
-    shell: '/usr/local/bin/zsh',
+    shell: 'zsh',
+    shellArgs: ['--login'],
+    env: {},
+    bell: false,
+    copyOnSelect: false,
 
     overlay: {
       animate: false,
@@ -45,9 +49,9 @@ module.exports = {
 
   plugins: [
     'hypercwd',
-    'hyperterm-close-on-left',
     'hyperterm-tab-icons',
-    'hyperterm-overlay'
+    'hyperterm-overlay',
+    'hyperterm-seti'
   ],
 
   localPlugins: []

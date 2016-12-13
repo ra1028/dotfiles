@@ -55,6 +55,7 @@
         po  = push origin
         pom = push origin master
         pod = push origin develop
+        poc = !git push origin `git rev-parse --abbrev-ref @`
         pg  = push github
         pgm = push github master
         pgd = push github develop

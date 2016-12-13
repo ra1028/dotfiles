@@ -4,7 +4,7 @@
 # Maintainer:  Ryo Aoyama <r.fe51028.r@gmail.com>
 
 cat <<'EOD'
-[1;33m__        __   _
+[1;36m__        __   _
 \ \      / /__| | ___ ___  _ __ ___   ___
  \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \
   \ V  V /  __/ | (__ (_) | | | | | |  __/
@@ -20,30 +20,33 @@ EOD
 # source common shell run command
 source ~/.shrc.common
 
-# gvm setting
+# path setting
+export PATH="$HOME/.local/bin:$PATH"
+
+# env settings
+
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
-# rbenv setting
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)" 2>/dev/null
 fi
 
-# jenv setting
+if which pyenv > /dev/null; then
+  eval "$(pyenv init -)" 2>/dev/null
+fi
+
 if which jenv > /dev/null; then
   eval "$(jenv init -)" 2>/dev/null
 fi
 
-# scalaenv setting
 if which scalaenv > /dev/null; then
   eval "$(scalaenv init -)" 2>/dev/null
 fi
 
-# swiftenv setting
 if which swiftenv > /dev/null; then
   eval "$(swiftenv init - zsh)" 2>/dev/null
 fi
 
-# direnv setting
 if which direnv > /dev/null; then
   eval "$(direnv hook zsh)" 2>/dev/null
 fi
@@ -103,8 +106,8 @@ setopt prompt_sp
 # PROMPT1
 PS1="%{[0m%}
 %{[37m%}\$(parse_git_status)%{[0m%}
-%(?|%{[1;36m%}@%n |%{[1;31m%}@%n )%{[1;33m%}%~% %{[1;35m%}\$(parse_git_branch)%{[0m%}
-%{[0m%}"
+%(?|%{[0;36m%}@%n |%{[0;31m%}@%n )%{[0;32m%}%~% %{[0;35m%}\$(parse_git_branch)%{[0m%}
+"
 
 # PROMPT2
 PS2="%_> "
@@ -223,6 +226,11 @@ alias ref='source ~/.zshrc'
 alias xco='xcopen -a /Applications/Xcode.app'
 alias xcbo='xcopen -a /Applications/Xcode-beta.app'
 alias ijo='ijopen -a /Applications/IntelliJ\ IDEA\ CE.app'
+
+# for stack
+alias ghc='stack ghc'
+alias ghci='stack ghci'
+alias runghc='stack runghc'
 
 # for hub
 alias -g pr='pull-request'

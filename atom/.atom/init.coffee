@@ -15,6 +15,11 @@
 
 # go settings
 
+childProcess = require('child_process')
+
+shellOutput = childProcess.execFileSync(process.env.SHELL, ['-i', '-c', 'echo $PATH']).toString().trim().split('\n')
+process.env.PATH = shellOutput[shellOutput.length - 1]
+
 goroot = atom.config.get("core.Path.GOROOT")
 if goroot
   process.env.PATH = ["#{goroot}", process.env.PATH].join(":")
