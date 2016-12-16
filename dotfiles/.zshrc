@@ -4,7 +4,7 @@
 # Maintainer:  Ryo Aoyama <r.fe51028.r@gmail.com>
 
 cat <<'EOD'
-[1;36m__        __   _
+[1;34m__        __   _
 \ \      / /__| | ___ ___  _ __ ___   ___
  \ \ /\ / / _ \ |/ __/ _ \| '_ ` _ \ / _ \
   \ V  V /  __/ | (__ (_) | | | | | |  __/
@@ -106,7 +106,7 @@ setopt prompt_sp
 # PROMPT1
 PS1="%{[0m%}
 %{[37m%}\$(parse_git_status)%{[0m%}
-%(?|%{[0;36m%}@%n |%{[0;31m%}@%n )%{[0;32m%}%~% %{[0;35m%}\$(parse_git_branch)%{[0m%}
+%(?|%{[0;34m%}@%n |%{[0;31m%}@%n )%{[0;32m%}%~% %{[0;35m%}\$(parse_git_branch)%{[0m%}
 "
 
 # PROMPT2
@@ -231,6 +231,7 @@ alias ijo='ijopen -a /Applications/IntelliJ\ IDEA\ CE.app'
 alias ghc='stack ghc'
 alias ghci='stack ghci'
 alias runghc='stack runghc'
+alias runhaskell='stack runhaskell'
 
 # for hub
 alias -g pr='pull-request'

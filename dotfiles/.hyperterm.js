@@ -43,7 +43,7 @@ module.exports = {
       hotkeys: ['Ctrl+Cmd+Space'],
       position: 'left',
       resizable: false,
-      size: 0.4
+      size: 0.5
     },
   },
 

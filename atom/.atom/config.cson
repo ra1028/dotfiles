@@ -1,4 +1,5 @@
 "*":
+  "atom-runner": {}
   "auto-update-packages": {}
   "autocomplete-haskell":
     useBackend: "haskell-ghc-mod"
@@ -26,6 +27,10 @@
       "wrap-guide"
       "autocomplete-paths"
       "linter-ruby"
+      "welcome"
+      "package-generator"
+      "exception-reporting"
+      "background-tips"
     ]
     packagesWithKeymapsDisabled: [
       "go-plus"
@@ -57,11 +62,14 @@
   "haskell-ghc-mod":
     onChangeCheck: true
     onChangeLint: true
+    onMouseHoverShow: "type"
     onSelectionShow: "typeAndInfo"
     suppressGhcPackagePathWarning: true
   "highlight-selected": {}
-  "ide-haskell": {}
+  "ide-haskell":
+    onSavePrettify: true
   "ide-haskell-repl":
+    autoReloadRepeat: true
     defaultRepl: "stack"
   linter:
     lintOnChangeInterval: 2000
@@ -75,8 +83,14 @@
   minimap:
     displayPluginsControls: false
     minimapScrollIndicator: false
+  runner:
+    scopes:
+      haskell: "stack exec runhaskell"
   welcome:
     showOnStartup: false
+  whitespace:
+    ensureSingleTrailingNewline: false
+    ignoreWhitespaceOnCurrentLine: false
 ".console.python.text":
   editor:
     preferredLineLength: 150
