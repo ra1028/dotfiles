@@ -1,9 +1,9 @@
 DIR=$HOME/dotfiles
-BASE=$HOME/dotfiles/Xcode
+BASE=$HOME/dotfiles/xcode
 TARGET=$HOME/Library/Developer/Xcode
 
 cd $BASE/FontAndColorThemes/
-for scheme in * ; do
+for scheme in *; do
   [ $scheme = "." ] && continue
   [ $scheme = ".." ] && continue
   [ $scheme = ".DS_Store" ] && continue

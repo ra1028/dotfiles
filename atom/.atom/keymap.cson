@@ -1,4 +1,0 @@
-'atom-text-editor':
-  'ctrl-i': 'editor:auto-indent'
-  'ctrl-y': 'core:paste'
-  'ctrl-shift-i': 'godef:toggle'

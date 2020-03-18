@@ -21,11 +21,13 @@ EOD
 source ~/.shrc.common
 
 # path setting
-export PATH="$HOME/.local/bin:$PATH"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.cargo/bin"
+export PATH="$PATH:$HOME/development/flutter/bin"
+export PATH="$PATH:$HOME/development/flutter/.pub-cache/bin"
+export PATH="$PATH:$HOME/development/flutter/bin/cache/dart-sdk/bin/"
 
 # env settings
-
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
 if which rbenv > /dev/null; then
   eval "$(rbenv init -)" 2>/dev/null
@@ -47,8 +49,8 @@ if which swiftenv > /dev/null; then
   eval "$(swiftenv init - zsh)" 2>/dev/null
 fi
 
-if which direnv > /dev/null; then
-  eval "$(direnv hook zsh)" 2>/dev/null
+if which nodenv > /dev/null; then
+  eval "$(nodenv init -)" 2>/dev/null
 fi
 
 # use key map like emacs
@@ -188,53 +190,10 @@ function precmd ()
         fi
 }
 
-function git ()
-{
-		hub "$@"
-}
-
-function xcopen () {
-    local xws=$((\ls -d *.xcworkspace) 2>/dev/null)
-    if [[ $xws != '' ]] ; then
-        echo "Trying to open $xws\n" ;
-        open $@ $xws;
-    else
-        local xcp=$((\ls -d *.xcodeproj) 2>/dev/null)
-        if [[ $xcp != '' ]] ; then
-            echo "Trying to open $xcp.\n" ;
-            open $@ $xcp;
-        else
-            echo "Xcode project is not exist.\n"
-        fi
-    fi
-}
-
-function ijopen () {
-    local iml=$((\ls -d *.iml) 2>/dev/null)
-    if [[ $iml != '' ]] ; then
-        local pwd=$(pwd)
-        echo "Trying to open $pwd\n" ;
-        open $@ $pwd;
-    else
-        echo "IntelliJ project is not exist.\n"
-    fi
-}
-
 # alias
 alias ls='ls -a -G'
 alias ref='source ~/.zshrc'
-alias xco='xcopen -a /Applications/Xcode.app'
-alias xcbo='xcopen -a /Applications/Xcode-beta.app'
-alias ijo='ijopen -a /Applications/IntelliJ\ IDEA\ CE.app'
-
-# for stack
-alias ghc='stack ghc'
-alias ghci='stack ghci'
-alias runghc='stack runghc'
-alias runhaskell='stack runhaskell'
-
-# for hub
-alias -g pr='pull-request'
+alias xc='open -a $(xcode-select -p)/../..'
 
 # local shell command
 [ -f ~/.zshrc.local ] && source ~/.zshrc.local
